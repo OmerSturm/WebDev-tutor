@@ -1,10 +1,424 @@
 <!DOCTYPE html>
 <html>
     <head>
-<link rel="stylesheet" href="/home_css.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" type="text/css">
-<script type="module" src="/scroll_animations.js" defer></script>
  <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ <style>
+    @import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+:root{
+/*--main-color:rgba(100,150,237,1);
+--content-bg:rgb(16,125,172);*/
+--main-color:#474E68;
+--content-bg:#404258;
+--scroll-dark:rgba(0,0,0,.5);
+--scroll-light:#6B728E;
+}
+
+body,html {
+  margin:0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  position: relative;
+  direction: rtl;
+  font-family: 'Euclid Circular B', sans-serif;
+}
+
+h1 {  
+  font-weight:300;
+  letter-spacing: 1px;
+  font-size: 7rem;
+}
+h2{
+  font-weight:300;
+  letter-spacing: 1px;
+  font-size: 3rem; 
+}
+p {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 1px;
+  font-size:14px;
+}
+
+.header {
+  position:relative;
+  text-align:center;
+  background:var(--main-color);
+  color:white;
+}
+
+
+.inner-header {
+  height:65vh;
+  width:100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex { /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position:relative;
+  width: 100%;
+  height:15vh;
+  margin-bottom:-7px; 
+  min-height:100px;
+  max-height:150px;
+}
+
+.content {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color:var(--content-bg);
+height: 180vh;
+position: relative;
+}
+.content h1{
+  font-size: 5rem;
+  color:white;
+}
+.content svg:nth-child(1){
+  position: absolute;
+  top: -10px;
+}
+
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+
+@keyframes swing {
+  from {
+    transform: rotate(5deg);
+  }
+  to {
+    transform: rotate(-5deg);
+  }
+}
+
+.button{
+background-color: transparent;
+backdrop-filter: blur(12px);
+padding: .5rem 2rem .5rem 2rem;
+width: max-content;
+border-radius: 10px;
+border: solid white 3px;
+transition:ease .1s;
+display: flex;
+flex-direction: row-reverse;
+justify-content: space-evenly;
+align-items: center;
+gap:10px;
+}
+
+a{
+  text-decoration: none;
+}
+.button:hover a{
+  letter-spacing:.1rem;
+  color: var(--main-color);
+  
+  
+}
+.button:hover i{
+  color: var(--main-color);
+}
+.button:hover{
+  background-color: white;
+  border:solid transparent;
+}
+.button a,i,p{
+  color:white;
+  font-size: larger;
+  transition:ease .1s;
+  font-family: inherit;
+  font-size:2rem;
+}
+
+.top{
+  position: absolute;
+  top: 2rem;
+  z-index: 1;
+}
+
+.right{
+  right: 2rem;
+}
+i{
+color:white;
+font-size: 1.5rem;
+}
+
+
+/*Shrinking for mobile*/
+@media (max-width: 750px) {
+  .waves {
+    height:60px;
+    min-height:40px;
+  }
+  .content {
+    height:30vh;
+  }
+  .content p {
+  font-size: 4rem;
+  }
+  h1 {
+    font-size:24px;
+  }
+  .button{
+    padding: 1rem 4rem 1rem 4rem;    
+  }
+}
+
+span{
+  transition:all .8s ease;
+}
+
+.hide:nth-child(even){
+  transform: translateX(-600%);
+}
+.hide:nth-child(odd){
+  transform: translateX(600%);
+}
+
+
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background:var(--scroll-light);        /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+  background-color:var(--scroll-dark);     
+}
+.white_bg{
+  background-color: white;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.white_bg i{
+  padding: 4rem;
+  border:solid var(--main-color) 3px;
+  border-radius: 50%;
+  font-size: 5rem;
+    color: var(--main-color);
+    transition: .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    
+}
+.white_bg p{
+  font-size: 3rem;
+  color: var(--main-color);
+  z-index: 1;
+}
+.white_bg i:hover{
+  color:white;
+  background-color:var(--main-color);
+}
+#move{
+  animation: swing 3s linear infinite alternate;
+  text-shadow: 0 1px 0 #efefef,
+  0 2px 0 #efefef,
+  0 3px 0 #efefef,
+  0 4px 0 #efefef,
+  0 30px 5px rgba(0, 0, 0, 0.1);
+}
+.fotter{
+margin-top: 10rem;
+position: absolute;
+bottom: 0;
+width:100vw;
+height: 10rem;
+background-color: var(--main-color);
+z-index: 0;
+display: grid;
+place-content: center;
+}
+.fotter p{
+  border-bottom: solid white 4px;
+
+}
+
+.alert{
+  z-index: 2;
+  position: fixed;
+  left: 1rem;
+  top:1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 10px;
+}
+
+.good{
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  right:-7rem;
+  width: 6rem;
+  height: 3rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  transform: scaleY(0);
+  transition: all cubic-bezier(0.075, 0.82, 0.165, 1) .4s;
+}
+.good p{
+  color:white;
+}
+.alert p,i{
+  margin: 1rem;
+}
+
+.info{
+
+    position: relative;
+    background: inherit;
+    overflow: hidden;
+    width: 70vw;
+    height:max-content;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 
+                0 6px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+  }
+  
+.info :before {
+    content: '';
+    position: absolute;
+    background: inherit;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: -20px;
+    box-shadow: inset 0 0 500px rgba(255, 255, 255, .4); 
+    filter: blur(20px);
+    z-index: -1;
+  }
+.info p {
+  padding-left:4rem;
+  padding-right: 4rem;
+}
+
+.plane{
+  margin-top: 5rem;
+  position: absolute;
+  transform: translateX(-60vw);
+  animation: fly 8s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.plane .row i{
+  z-index: 0;
+  color:white;
+  font-size: 3rem;
+
+}
+.plane .row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;  
+  gap:.3rem;
+
+}
+.plane .column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.plane .column span{
+  width: 5rem;
+  height: .2rem;
+  background-color: white;
+  animation: chage_width 1s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+
+.plane .column  :nth-child(1){
+  animation-delay: -2s;
+  animation-duration: 10s;
+}
+.plane .column  :nth-child(2){
+  animation-delay: -5s;
+  animation-duration: 4s;
+}
+.plane .column  :nth-child(3){
+  animation-delay: -3s;
+  animation-duration: 70s;
+}
+
+@keyframes fly{
+0%{
+
+}
+100%{
+transform: translate(60vw);
+}
+}
+@keyframes chage_width{
+  0% {
+  transform: scaleX(1);
+  
+  }
+  30% {
+    transform: scaleX(.5);
+    transform:translateX(10%);
+
+  }
+  68%,
+  72% {
+    transform: scaleX(.8);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+
+}
+ </style>
     </head>
     <body>
 
@@ -113,5 +527,36 @@
     <p>שיעורים פרטים בפיתוח תוכנה</p>
 </footer>
 
+
+<script>
+    const boxes = document.querySelectorAll(".hide");
+document.getElementById("copy").addEventListener("click",copy);
+
+
+window.addEventListener("scroll",move_box);
+
+
+
+function move_box(){
+    const bottom_trigger = (window.innerHeight / 5 *4); 
+    boxes.forEach(box =>{
+        const boxTop = box.getBoundingClientRect().top;
+        if(boxTop < bottom_trigger) box.classList.remove("hide");
+        else box.classList.add("hide");
+    });    
+}
+
+const sleep = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
+async function copy(){
+    navigator.clipboard.writeText('sturm.omer@gmail.com');
+    document.querySelector('.good').style.transform = 'scale(1)'
+    await sleep(1000);
+    document.querySelector('.good').style.transform = 'scale(0)'
+
+}
+</script>
     </body>
 </html>
