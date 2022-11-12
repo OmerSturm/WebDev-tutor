@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>מאה באינטרנט</title>
+        <link rel="icon" href="https://previews.123rf.com/images/tmricons/tmricons1510/tmricons151000614/45815367-html-code-icon.jpg">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" type="text/css">
  <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
  <style>
+
     @import url(//fonts.googleapis.com/css?family=Lato:300:400);
 
 :root{
@@ -79,7 +82,9 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 background-color:var(--content-bg);
-height: 180vh;
+height: max-content;
+padding-top: 20%;
+padding-bottom: 30%;
 position: relative;
 }
 .content h1{
@@ -91,7 +96,12 @@ position: relative;
   top: -10px;
 }
 
-
+.black i {
+    color:black !important;
+}
+.black span{
+    background-color:black !important;
+}
 /* Animation */
 
 .parallax > use {
@@ -185,28 +195,12 @@ font-size: 1.5rem;
 }
 
 
-/*Shrinking for mobile*/
-@media (max-width: 750px) {
-  .waves {
-    height:60px;
-    min-height:40px;
-  }
-  .content {
-    height:30vh;
-  }
-  .content p {
-  font-size: 4rem;
-  }
-  h1 {
-    font-size:24px;
-  }
-  .button{
-    padding: 1rem 4rem 1rem 4rem;    
-  }
-}
+
 
 span{
   transition:all .8s ease;
+  margin:0;
+
 }
 
 .hide:nth-child(even){
@@ -228,27 +222,29 @@ body::-webkit-scrollbar-thumb {
 }
 .white_bg{
   background-color: white;
-  height: 70vh;
+  height: max-content;
+  margin-bottom: 15rem;
   display: flex;
+  gap:10rem;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.white_bg i{
+.white_bg .send_link{
   padding: 4rem;
   border:solid var(--main-color) 3px;
   border-radius: 50%;
   font-size: 5rem;
     color: var(--main-color);
     transition: .4s cubic-bezier(0.075, 0.82, 0.165, 1);
-    
+    width: max-content;
 }
 .white_bg p{
   font-size: 3rem;
   color: var(--main-color);
   z-index: 1;
 }
-.white_bg i:hover{
+.white_bg .send_link:hover{
   color:white;
   background-color:var(--main-color);
 }
@@ -261,7 +257,6 @@ body::-webkit-scrollbar-thumb {
   0 30px 5px rgba(0, 0, 0, 0.1);
 }
 .fotter{
-margin-top: 10rem;
 position: absolute;
 bottom: 0;
 width:100vw;
@@ -311,6 +306,8 @@ place-content: center;
   margin: 1rem;
 }
 
+
+
 .info{
 
     position: relative;
@@ -340,12 +337,12 @@ place-content: center;
 .info p {
   padding-left:4rem;
   padding-right: 4rem;
+  color:white;
+  font-size:2.3rem;
+  line-height: 3.5rem;
 }
 
-.plane{
-  margin-top: 5rem;
-  position: absolute;
-  transform: translateX(-60vw);
+.plane {
   animation: fly 8s cubic-bezier(.55,.5,.45,.5) infinite;
 }
 .plane .row i{
@@ -393,10 +390,10 @@ place-content: center;
 
 @keyframes fly{
 0%{
-
+transform: translateX(-60vw);
 }
 100%{
-transform: translate(60vw);
+transform: translateX(60vw);
 }
 }
 @keyframes chage_width{
@@ -418,6 +415,57 @@ transform: translate(60vw);
   }
 
 }
+
+@media only screen and (max-width: 800px) {
+  .waves {
+    height:60px;
+    min-height:40px;
+  }
+  
+
+  .button{
+    padding: 1rem 4rem 1rem 4rem;    
+  }
+  .content{
+    height: 140vh;
+  }
+}
+
+.number{
+
+margin:0;
+display: grid;
+place-content: center;
+
+
+}
+.center{
+    display:grid;
+    place-content: center;
+}
+.price{
+    padding-bottom: 3rem;
+}
+.price p {
+    font-size:10rem;
+    margin:0;
+    background-image: linear-gradient(to right, #404258,#404258);
+    background-repeat: no-repeat;
+background-size: 0 10%;
+background-position: left bottom;
+transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+transition-delay: .8s;
+}
+.book_mark_wrraper{
+    background-color: rgba(0 ,0 ,0 ,0.4);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 
+                0 6px 20px rgba(0, 0, 0, 0.15);
+    padding-left: 20vw;
+    padding-right: 20vw;
+    border-left: solid 2rem #474E68;
+    border-right:solid 2rem #474E68; 
+}
+
  </style>
     </head>
     <body>
@@ -425,7 +473,7 @@ transform: translate(60vw);
 
         <div class="alert">
             <i class="fa-solid fa-copy" id="copy"></i>
-            <p>Email:sturm.omer@gmail.com</p>
+            <p>Email:omersturmwebdevtutor@gmail.com</p>
             
             <div class="good"><p>הועתק</p></div>
         </div>
@@ -440,7 +488,7 @@ transform: translate(60vw);
             <div class="inner-header flex">
             
             <h1> מאה באנטרנט?, פשוט! </h1>
-            <h2 id="move"> sturm.omer@gmail.com</h2>
+            <h2 id="move"> omersturmwebdevtutor@gmail.com</h2>
             <div class="button"><a href="#content">אני רוצה לקרוא</a></div>
             
             </div>
@@ -473,9 +521,8 @@ transform: translate(60vw);
             <span class="hide"> 
                 <div class="info">
                 <p>
-                    זה בעצם התוצר של כל המחקר שעשיתם על העסק שלכם, השלב המעשי שמגיע אחרי שקיבלתם את התשובות לכל השאלות של: מי אני? מי הקהל שלי? למה דווקא אני?
-
-כתיבה שיווקית היא הדרך לקחת את כל מה שמיוחד ושונה אצלכם, את כל הידע והמקצועיות שלכם, ולהעביר את זה הלאה אל העולם בצורה הנכונה, המשכנעת והמרגשת ביותר.
+                  היי אני עומר שטורם, אני לומד בכיתה יא בבית ספר דרור, אחת המגמות שלי זה מדעי המחשב. 
+שההיתי בכיתה י עשיתי את הבגרות באינטרנט בהצלחה ועכשיו אני רוצה לעזור לכם לעשות את אותו הדבר! 
                 </p>
                 </div> 
             </span>
@@ -501,9 +548,8 @@ transform: translate(60vw);
                 <span class="hide">
             <div class="info">
             <p>
-                זה בעצם התוצר של כל המחקר שעשיתם על העסק שלכם, השלב המעשי שמגיע אחרי שקיבלתם את התשובות לכל השאלות של: מי אני? מי הקהל שלי? למה דווקא אני?
-
-                כתיבה שיווקית היא הדרך לקחת את כל מה שמיוחד ושונה אצלכם, את כל הידע והמקצועיות שלכם, ולהעביר את זה הלאה אל העולם בצורה הנכונה, המשכנעת והמרגשת ביותר.
+              שאלה מצויינת! מבחינת הבגרות באינטרנט ישנם שני צדדים עיקריים. הראשון הוא הנראות של האתר וכול המשתמע מכך. רוב העבודה בחלק הזה תאעשה באזרת שפות התכנות html css ו java script שתמש אותנו על מנת לבדוק נתונים המוכנסים לאתר. 
+              החלק השני של העבודה הוא צד שרת וממסד נתונים, בחלק זה נלמד שימוש בשפת התחנות c# sql בתוך asp. Net בנוסף ברגע שנסיים את העבודה עצמה במחן עצמו יש גם שאלות ידע ושאלות מעשיות, גם בהם אני יכול לעזור לכם להיות הכי מוכנים שיש! 
             </p>
             </div>
 
@@ -515,12 +561,41 @@ transform: translate(60vw);
 
 
 
-<div class="white_bg" id="send">
+<div class="white_bg" >
     <span class="hide">
-        <a href="mailto:sturm.omer@gmail.com?subject=Hi omer,can we talk about private lessons?">
-<i class="fa-solid fa-paper-plane" ></i>
+    <div class="book_mark_wrraper">
+ 
+    <h1 style="color:#404258">כמה עולה?</h1>
+        <div class="number">
+            <div class="price center">
+                <p>0₪</p>
+        </div>
+        </div>
+  
+</div>
+</span>
+    
+
+<div class="plane black" id="send">
+    <div class="row">
+   <i class="fa-solid fa-plane"></i>
+   <div class="column">
+    <span></span>
+    <span></span>
+    <span></span>
+   </div>
+    </div>
+    </div>
+
+
+    
+    <span class="hide" >
+        <a class="center" href="mailto:omersturmwebdevtutor@gmail.com?subject=מה קורה עומר אפשר לשמועה קצת על השיעורים?">
+<i class="send_link fa-solid fa-paper-plane" ></i>
 <p>שלח/י לי הודעה</p>
-</a></span>
+
+</a>
+</span>
 </div>
 
 <footer class="fotter">
@@ -530,28 +605,53 @@ transform: translate(60vw);
 
 <script>
     const boxes = document.querySelectorAll(".hide");
+    const number = document.querySelector(".number").querySelector("p");
+    let initialized = false;
 document.getElementById("copy").addEventListener("click",copy);
-
-
-window.addEventListener("scroll",move_box);
-
-
-
-function move_box(){
-    const bottom_trigger = (window.innerHeight / 5 *4); 
-    boxes.forEach(box =>{
-        const boxTop = box.getBoundingClientRect().top;
-        if(boxTop < bottom_trigger) box.classList.remove("hide");
-        else box.classList.add("hide");
-    });    
-}
 
 const sleep = (milliseconds) => {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
 
+window.addEventListener("scroll",move_box);
+
+
+
+
+async function animate_number(){
+    console.log("animate");
+    if(!initialized){   
+        initialized = true;
+    await sleep(800)
+    for(let i =0;i<=60;i++){
+        number.innerText = i+"₪";
+        await sleep(10);
+    }
+}
+}
+
+function move_box(){
+    const bottom_trigger = (window.innerHeight / 5 *4); 
+    boxes.forEach(box =>{
+        const numberTop = box.getBoundingClientRect().top - 400;
+        const boxTop = box.getBoundingClientRect().top;
+        if(numberTop < bottom_trigger){
+            animate_number();
+            number.style.backgroundSize = "100% 10%";
+            
+        }
+        else{
+            number.style.backgroundSize = "0 10%";
+            initialized = !(numberTop-500 < bottom_trigger);
+        }
+        if(boxTop < bottom_trigger) box.classList.remove("hide");
+        else box.classList.add("hide");
+    });    
+}
+
+
 async function copy(){
-    navigator.clipboard.writeText('sturm.omer@gmail.com');
+    navigator.clipboard.writeText('omersturmwebdevtutor@gmail.com');
     document.querySelector('.good').style.transform = 'scale(1)'
     await sleep(1000);
     document.querySelector('.good').style.transform = 'scale(0)'
